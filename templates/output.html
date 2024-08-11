@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prediction Result</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: url('/static/close-up-hands-holding-small-plane-top-view.jpg') no-repeat center center fixed; /* Replace with your background image URL */
+            background-size: cover;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow-y: auto;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+            width: 100%;
+            padding: 20px;
+        }
+
+        .card {
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 10px;
+            padding: 30px;
+            width: 100%;
+            max-width: 600px;
+            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
+            animation: fadeInUp 0.8s ease-in-out;
+        }
+
+        h2 {
+            color: #ff8c00;
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 2.5rem;
+        }
+
+        p {
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+        }
+
+        ul {
+            list-style-type: none;
+            padding-left: 0;
+            font-size: 1.1rem;
+        }
+
+        ul li {
+            margin-bottom: 10px;
+        }
+
+        .pred {
+            font-family: "Arial", sans-serif;
+            color: #ff8c00;
+            font-size: 1.8rem;
+            text-decoration: underline;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        a {
+            display: block;
+            text-align: center;
+            margin-top: 30px;
+            color: #fff;
+            background-color: #ff8c00;
+            padding: 12px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 1.2rem;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        a:hover {
+            background-color: #ffb703;
+            transform: scale(1.05);
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translate3d(0, 40px, 0);
+            }
+            to {
+                opacity: 1;
+                transform: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <h2>Prediction Result</h2>
+            <p><strong>Your Inputs:</strong></p>
+            <ul>
+                <li><strong>Age:</strong> {{ age }}</li>
+                <li><strong>Flight Distance:</strong> {{ flight_distance }}</li>
+                <li><strong>Inflight Entertainment:</strong> {{ inflight_entertainment }}</li>
+                <li><strong>Baggage Handling:</strong> {{ baggage_handling }}</li>
+                <li><strong>Cleanliness:</strong> {{ cleanliness }}</li>
+                <li><strong>Departure Delay:</strong> {{ departure_delay }}</li>
+                <li><strong>Arrival Delay:</strong> {{ arrival_delay }}</li>
+                <li><strong>Gender:</strong> {{ gender }}</li>
+                <li><strong>Customer Type:</strong> {{ customer_type }}</li>
+                <li><strong>Class:</strong> {{ class_type }}</li>
+                <li><strong>Type of Travel:</strong> {{ travel_type }}</li>
+            </ul>
+            <div class="pred">
+                <p><strong>Prediction:</strong> {{ output }}</p>
+            </div>
+            <a href="/">Go Back</a>
+        </div>
+    </div>
+</body>
+</html>

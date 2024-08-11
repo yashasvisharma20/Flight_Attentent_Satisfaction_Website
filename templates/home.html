@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flight Attendant Satisfaction Survey</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        .navbar {
+            background: rgba(0, 0, 0, 0.8);
+            padding: 15px;
+        }
+
+        .navbar-brand {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #fff;
+        }
+
+        .navbar-nav .nav-link {
+            font-size: 1.2rem;
+            margin-left: 20px;
+            color: #fff;
+            transition: color 0.3s;
+        }
+
+        navbar-nav .nav-link:hover {
+            color: #ffb703;
+        }
+
+        .hero-section {
+            background: url('/static/view-3d-airplane-with-wings-engine.jpg') no-repeat center center/cover;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: #fff;
+            position: relative;
+        }
+
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.4);
+            z-index: 1;
+        }
+
+        .hero-section h1,
+        .hero-section p {
+            z-index: 2;
+            position: relative;
+        }
+
+        .hero-section h1 {
+            font-size: 4rem;
+            margin-bottom: 20px;
+        }
+
+        .hero-section p {
+            font-size: 1.5rem;
+            margin-bottom: 30px;
+        }
+
+        .btn-primary {
+            font-size: 1.5rem;
+            padding: 15px 30px;
+            background-color: #ffb703;
+            border: none;
+            color: #000;
+            transition: background-color 0.3s, transform 0.3s;
+            z-index: 2;
+            position: relative;
+        }
+
+        .btn-primary:hover {
+            background-color: #ff8c00;
+            transform: scale(1.05);
+        }
+
+        .section {
+            padding: 80px 0;
+        }
+
+        .section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 40px;
+            text-align: center;
+        }
+
+        .section p {
+            font-size: 1.2rem;
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 40px auto;
+        }
+
+        .about-section {
+            background-color: #f7f7f7;
+        }
+
+        .about-section .row {
+            align-items: center;
+        }
+
+        .about-section img {
+            max-width: 100%;
+            border-radius: 10px;
+        }
+
+        .footer {
+            background-color: #000;
+            color: #fff;
+            padding: 30px 0;
+            text-align: center;
+        }
+
+        .footer a {
+            color: #ffb703;
+            text-decoration: none;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translate3d(0, 40px, 0);
+            }
+            to {
+                opacity: 1;
+                transform: none;
+            }
+        }
+
+        .animated {
+            animation-duration: 0.8s;
+            animation-fill-mode: both;
+            animation-timing-function: ease-in-out;
+        }
+
+        .fadeInUp {
+            animation-name: fadeInUp;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">Flight Satisfaction</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#survey">Survey</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-section">
+        <div class="container">
+            <h1 class="animated fadeInUp">Flight Attendant Satisfaction Survey</h1>
+            <p class="animated fadeInUp">Predict customer satisfaction with our advanced machine learning model</p>
+            <a href="#survey" class="btn btn-primary animated fadeInUp">Start the Survey</a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section about-section">
+        <div class="container">
+            <h2>About the Project</h2>
+            <p>Our project leverages machine learning to analyze and predict customer satisfaction based on various factors gathered from in-flight experiences.</p>
+            <div class="row">
+                <div class="col-md-6">
+                    <img src="/static/standard-quality-control-concept-m.jpg" alt="In-Flight Service">
+                </div>
+                <div class="col-md-6">
+                    <h3>Technologies Used</h3>
+                    <ul>
+                        <li><b>Flask:</b> Web application framework for Python</li>
+                        <li><b>SQLite3:</b> Lightweight database for storing survey data</li>
+                        <li><b>Python:</b> Backend logic and machine learning integration</li>
+                        <li><b>NumPy & Pandas:</b> Data analysis and manipulation</li>
+                        <li><b>Matplotlib & Seaborn:</b> Data visualization</li>
+                        <li><b>Joblib:</b> Model persistence and deployment</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Survey Section -->
+    <section id="survey" class="section">
+        <div class="container">
+            <h2>Customer Satisfaction Survey</h2>
+            <p>Help us improve our services by taking a few minutes to complete the survey. Your feedback is valuable to us.</p>
+            <div class="text-center">
+                <a href="/survey_form" class="btn btn-primary">Take the Survey</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+<section id="contact" class="section about-section" style="background-color: #f2f2f2;">
+    <div class="container">
+        <h2>Contact Us</h2>
+        <p>If you have any questions or need further information, feel free to contact us.</p>
+        <div class="row text-center">
+            <div class="col-md-6 mb-4">
+                <h4><i class="fas fa-envelope"></i> Email:</h4>
+                <p><a href="mailto:support@flightsatisfaction.com" style="color: #ffb703; text-decoration: none;">support@flightsatisfaction.com</a></p>
+            </div>
+            <div class="col-md-6 mb-4">
+                <h4><i class="fas fa-phone"></i> Phone:</h4>
+                <p><a href="tel:+1234567890" style="color: #ffb703; text-decoration: none;">+1 234 567 890</a></p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+    <p>&copy; 2024 Flight Satisfaction. All Rights Reserved.</p>
+    <p>Follow us on 
+        <a href="https://www.linkedin.com/in/yashasvi-sharma-3009392a8/" target="_blank" style="color: #ffb703;"><i class="fab fa-linkedin"></i></a> | 
+        <a href="https://github.com/yashasvisharma20" target="_blank" style="color: #ffb703;"><i class="fab fa-github"></i></a> | 
+        <a href="https://www.instagram.com" target="_blank" style="color: #ffb703;"><i class="fab fa-instagram"></i></a>
+    </p>
+</footer>
+
+<!-- Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
