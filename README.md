@@ -1,5 +1,5 @@
 
-**Customer Satisfaction Prediction Web App**
+**Flight Attentent Satisfaction Website**
 
 This Flask-based web application aims to gather customer feedback and predict satisfaction using a pre-trained machine learning model. Users can complete a form with various satisfaction metrics, which the model then uses to make predictions.
 
